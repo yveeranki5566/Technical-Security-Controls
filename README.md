@@ -3,88 +3,132 @@
 **Technical Control Implementation Details**
 
 **Control number:1**
+
 Type: Detective
+
 System: Microsoft Windows Server 2019 Datacenter, 10.11.9.149, WINDOWS
+
 Application or Service: Code Meter Runtime 6.70
+
 Implementation steps: 
 Upgrade to Code Meter Runtime 8.10 as the existing version on the server uses predictable encryption key which can be exploited.
 Download the latest Code Meter Runtime application file and install it replacing the older version.
 
 **Control number:2**
+
 Type: Preventative
+
 System: Microsoft Windows Server 2019 Datacenter, 10.11.9.149, WINDOWS
+
 Application or Service: Windows Server Update services
+
 Implementation steps: 
 Go to Server Manager and install WSUS server role.
 Approve and deploy WSUS updates by using the WSUS Management Console, and configure WSUS to automatically approve installation of updates.
 
 **Control number:3**
+
 Type: Detective
+
 System: Microsoft Windows Server 2019 Datacenter, 10.11.9.149, WINDOWS
+
 Application or Service: Tenable Nessus 8.15.0
+
 Implementation steps: 
 Upgrade to Nessus 10.7.4 as the existing version has been affected by multiple Vulnerabilities.
 Download the latest version .msi application file from tenable website and install it replacing the existing version.
 
 **Control number:4**
+
 Type: Detective
+
 System: Kali GNU/Linux Rolling, 10.11.9.148, KALI
+
 Application or Service: Open JDK 17.0.8
+
 Implementation steps: 
 Upgrade to Open JDK 22.0.1 as the existing version has been affected by multiplevulnerabilities allow unauthenticated attacker with network access via multiple protocols.
 Download the latest version .tar file, install it from the terminal, configure and update to the new java version, uninstall the older versions in the system.
               
 **Control number:5**
+
 Type: Detective
+
 System: Kali GNU/Linux Rolling, 10.11.9.148, KALI
+
 Application or Service: ClamAV 1.0.1 and ClamTK
+
 Implementation steps: 
  Upgrade to Clam AV 1.0.6 as the existing version has been affected by a vulnerability in the Virus Event feature where the attacker could manipulate and inject malicious code.
  Install the latest version of Clam AV and GUI Clam TK from the terminal. 
 
 **Control number:6**
+
 Type: Preventative
+
 System: Kali GNU/Linux Rolling, 10.11.9.148, KALI
+
 Application or Service: Unattended upgrades
+
 Implementation steps: 
 Install Unattended upgrades from the Linux terminal to ensure that important security patches for installed packages are automatically downloaded. 
 Choose Yes to automatically download and install stable updates.
 
 **Control number:7**
+
 Type: Detective
+
 System: Microsoft Windows Server 2019 Datacenter, 10.11.9.149, WINDOWS
+
 Application or Service: Microsoft network server-SMB sign
+
 Implementation steps: 
 Enforce message signing in the system configuration found in the policy setting, as a remote attacker can conduct man in the middle attacks against the server.
 Choose Enabled option for Microsoft network server: Digitally sign communications(Always).
  
 **Control number:8**
+
 Type: Preventative
+
 System: Kali GNU/Linux Rolling, 10.11.9.148, KALI
+
 Application or Service: Suricata 7.0.5
+
 Implementation steps: 
 Install Suricata and configure the rule set and update with the emerging rules to monitor the network traffic for signs of attacks and threats.
 
 **Control number:9**
+
 Type: Recovery
+
 System: Microsoft Windows Server 2019 Datacenter, 10.11.9.149, WINDOWS
-Application or Service: Windows Server Backup 
+
+Application or Service: Windows Server Backup
+
 Implementation steps: 
 Install Windows Server Backup using power shell.
 Configure a backup schedule for required data to backup and store in a secure location.
          
 **Control number:10**
+
 Type: Detective
+
 System: Kali GNU/Linux Rolling, 10.11.9.148, KALI
+
 Application or Service: Apache Log4j 2.14.0
+
 Implementation steps: 
 Upgrade to Apache Log4j 2.17.1 as the existing version has been affected by a RCE vulnerability, where a remote attacker can execute arbitrary commands.
 Download the latest version of Apache Log4j, edit the pom.xml file and add log 4j dependency, run mvn install command for the version to be updated.
 
 **Control number:11**
+
 Type: Preventative
+
 System: Microsoft Windows Server 2019 Datacenter, 10.11.9.149, WINDOWS
+
 Application or Service: AuditTAP Release 5.9.0
+
 Implementation steps: 
 Download and install AuditTAP.
 Copy module folders into module path, import the modules and install the modules.
